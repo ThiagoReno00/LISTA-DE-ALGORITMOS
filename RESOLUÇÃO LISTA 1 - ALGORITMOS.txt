@@ -1,0 +1,205 @@
+RESOLUÇÃO LISTA 1 - ALGORITMOS E PROGRAMAÇÃO ESTRUTURADA
+
+1) 
+
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Digite um numero: ");
+    scanf("%d", &numero);
+
+    int antecessor = numero - 1;
+
+    printf("O antecessor de %d é %d\n", numero, antecessor);
+
+    return 0;
+}
+
+
+2)
+
+#include <stdio.h>
+
+int main() {
+    float base, altura, area;
+
+    printf("Digite a base do retangulo: ");
+    scanf("%f", &base);
+    
+    printf("Digite a altura do retangulo: ");
+    scanf("%f", &altura);
+    
+    area = base * altura;
+
+    printf("A área do retangulo é: %.2f\n", area);
+
+    return 0;
+}
+
+3)
+
+#include <stdio.h>
+
+int main() {
+    int anos, meses, dias, idade_em_dias;
+
+    printf("Digite sua idade em anos: ");
+    scanf("%d", &anos);
+
+    printf("Digite os meses adicionais: ");
+    scanf("%d", &meses);
+
+    printf("Digite os dias adicionais: ");
+    scanf("%d", &dias);
+
+    idade_em_dias = (anos *365) + (meses * 30) + dias;
+
+    printf("Sua idade em dias é: %d dias\n", idade_em_dias);
+
+    return 0;
+}
+
+4)
+
+#include <stdio.h>
+
+int main() {
+    int total_eleitores, votos_brancos, votos_nulos, votos_validos;
+    float percentual_brancos, percentual_nulos, percentual_validos;
+
+    // Solicita que o usuário insira o número total de eleitores
+    printf("Digite o número total de eleitores: ");
+    scanf("%d", &total_eleitores);
+
+    printf("Digite o número de votos brancos: ");
+    scanf("%d", &votos_brancos);
+    
+    printf("Digite o número de votos nulos: ");
+    scanf("%d", &votos_nulos);
+
+    printf("Digite o número de votos válidos: ");
+    scanf("%d", &votos_validos);
+
+    percentual_brancos = (votos_brancos / (float)total_eleitores) * 100;
+    percentual_nulos = (votos_nulos / (float)total_eleitores) * 100;
+    percentual_validos = (votos_validos / (float)total_eleitores) * 100;
+
+    printf("Percentual de votos brancos: %.2f%%\n", percentual_brancos);
+    printf("Percentual de votos nulos: %.2f%%\n", percentual_nulos);
+    printf("Percentual de votos válidos: %.2f%%\n", percentual_validos);
+
+    return 0;
+}
+
+5)
+
+#include <stdio.h>
+
+int main() {
+    float salario_atual, percentual_reajuste, novo_salario;
+
+    printf("Digite o salário atual: ");
+    scanf("%f", &salario_atual);
+
+    printf("Digite o percentual de reajuste: ");
+    scanf("%f", &percentual_reajuste);
+
+    novo_salario = salario_atual + (salario_atual * percentual_reajuste / 100);
+
+    printf("O novo salário é: %.2f\n", novo_salario);
+
+    return 0;
+}
+
+6)
+
+#include <stdio.h>
+
+int main() {
+    float custo_fabrica, custo_final;
+    const float percentual_distribuidor = 28.0;
+    const float percentual_impostos = 45.0;
+
+    printf("Digite o custo de fábrica do carro: ");
+    scanf("%f", &custo_fabrica);
+
+    custo_final = custo_fabrica + 
+                  (custo_fabrica * percentual_distribuidor / 100) + 
+                  (custo_fabrica * percentual_impostos / 100);
+
+    printf("O custo final ao consumidor é: %.2f\n", custo_final);
+
+    return 0;
+}
+
+7)
+
+#include <stdio.h>
+
+int main() {
+    int carrosVendidos;
+    float valorTotalVendas, salarioFixo, comissaoPorCarro, salarioFinal;
+
+    printf("Digite o número de carros vendidos: ");
+    scanf("%d", &carrosVendidos);
+
+    printf("Digite o valor total das vendas: ");
+    scanf("%f", &valorTotalVendas);
+
+    printf("Digite o salário fixo do vendedor: ");
+    scanf("%f", &salarioFixo);
+
+    printf("Digite o valor da comissão por carro vendido: ");
+    scanf("%f", &comissaoPorCarro);
+
+    salarioFinal = salarioFixo + (comissaoPorCarro * carrosVendidos) + (0.05 * valorTotalVendas);
+
+    printf("O salário final do vendedor é: %.2f\n", salarioFinal);
+
+    return 0;
+}
+
+8)
+
+#include <stdio.h>
+
+int main() {
+    float fahrenheit, celsius;
+
+    printf("Digite a temperatura em graus Fahrenheit: ");
+    scanf("%f", &fahrenheit);
+
+    celsius = (fahrenheit - 32) * 5 / 9;
+
+    printf("A temperatura em graus Celsius é: %.2f\n", celsius);
+
+    return 0;
+}
+
+9)
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2, nota3, mediaFinal;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+
+    mediaFinal = (2 * nota1 + 3 * nota2 + 5 * nota3) / 10;
+
+    printf("A média final do aluno é: %.2f\n", mediaFinal);
+
+    return 0;
+}
+
+
+
