@@ -1,0 +1,16 @@
+ATIVIDADE EM SALA 13/08/2024
+
+#include <stdio.h>
+
+int main() {
+    int a = 10, b = -8, temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    printf("a = %d\n", a);
+    printf("b = %d\n", b);
+
+    return 0;
+}
