@@ -1,0 +1,246 @@
+RESOLUÇÃO LISTA 2 - ALGORITMOS E PROGRAMAÇÃO ESTRUTURADA
+
+1)
+
+#include <stdio.h>
+
+int main() {
+    float valor;
+
+    printf("Digite um valor: ");
+    scanf("%f", &valor);
+
+    if (valor > 10) {
+        printf("E MAIOR QUE 10!\n");
+    } else {
+        printf("NAO E MAIOR QUE 10!\n");
+    }
+
+    return 0;
+}
+
+2)
+
+#include <stdio.h>
+
+int main() {
+    float valor;
+    scanf("%f", &valor);
+    if (valor >= 0) {
+        printf("Positivo\n");
+    } else {
+        printf("Negativo\n");
+    }
+    return 0;
+
+
+}
+
+3)
+
+#include <stdio.h>
+
+int main() {
+    int quantidade;
+    float custo;
+
+    scanf("%d", &quantidade);
+
+    if (quantidade < 12) {
+        custo = quantidade * 1.30;
+    } else {
+        custo = quantidade * 1.00;
+    }
+
+    printf("custo toal: R$%.2f\n", custo);
+
+    return 0;
+}
+
+
+4)
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2, media;
+
+    scanf("%f %f", &nota1, &nota2);
+
+    media = (nota1 + nota2) / 2;
+
+    if (media >= 7) {
+        printf("Aprovado\n");
+    } else {
+        printf("Reprovado\n");
+    }
+
+    printf("Media: %.2f\n", media);
+
+    return 0;
+}
+
+
+5)
+
+#include <stdio.h>
+
+int main() {
+    int ano_atual, ano_nascimento, idade;
+
+    scanf("%d %d", &ano_atual, &ano_nascimento);
+
+    idade = ano_atual - ano_nascimento;
+
+    if (idade >= 16) {
+        printf("Pode votar\n");
+    } else {
+        printf("Nao pode votar\n");
+    }
+
+    return 0;
+}
+
+6)
+
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2;
+
+    scanf("%d %d", &valor1, &valor2);
+
+    if (valor1 > valor2) {
+        printf("%d\n", valor1);
+    } else {
+        printf("%d\n", valor2);
+    }
+
+    return 0;
+}
+
+7)
+
+#include <stdio.h>
+
+int main() {
+    int valor1, valor2;
+
+    scanf("%d %d", &valor1, &valor2);
+
+    if (valor1 < valor2) {
+        printf("%d %d\n", valor1, valor2);
+    } else {
+        printf("%d %d\n", valor2, valor1);
+    }
+
+    return 0;
+}
+
+
+8)
+
+#include <stdio.h>
+
+int main() {
+    int inicio, fim, duracao;
+
+    scanf("%d %d", &inicio, &fim);
+
+    if (fim >= inicio) {
+        duracao = fim  inicio;
+    } else {
+        duracao = 24 - inicio + fim;
+    }
+
+    printf("Duracao: %d hora(s)\n", duracao);
+
+    return 0;
+}
+
+9)
+
+#include <stdio.h>
+
+int main() {
+    int horas_trabalhadas;
+    float salario_hora, salario_total;
+
+    scanf("%d %f", &horas_trabalhadas, &salario_hora);
+
+    if (horas_trabalhadas > 160) {
+        salario_total = 160 * salario_hora + (horas_trabalhadas - 160) * salario_hora * 1.5;
+    } else {
+        salario_total = horas_trabalhadas * salario_hora;
+    }
+
+    printf("Salario total: %.2f\n", salario_total);
+
+    return 0;
+}
+
+
+10)
+
+#include <stdio.h>
+
+int main() {
+    char sexo;
+    float altura, peso_ideal;
+
+    scanf("%f %c", &altura, &sexo);
+
+    if (sexo == 'M') {
+        peso_ideal = (72.7 * altura) - 58;
+    } else if (sexo == 'F') {
+        peso_ideal = (62.1 * altura) - 44.7;
+    }
+
+    printf("Peso ideal: %.2f\n", peso_ideal);
+
+    return 0;
+}
+
+11)
+
+#include <stdio.h>
+
+int main() {
+    float salario_fixo, vendas, comissao, salario_total;
+
+    scanf("%f %f" &salario_fixo, &vendas);
+
+    if (vendas <= 1500) {
+        comissao = vendas * 0.03;
+    } else {
+        comissao = 1500 * 0.03 + (vendas - 1500) * 0.05;
+    }
+
+    salario_total = salario_fixo + comissao;
+
+    printf("Salario total: %.2f\n", salario_total);
+
+    return 0;
+}
+
+12)
+
+#include <stdio.h>
+
+int main() {
+    int quantidade_atual, quantidade_maxima, quantidade_minima;
+    float quantidade_media;
+
+    scanf("%d %d %d", &quantidade_atual, &quantidade_maxima, &quantidade_minima);
+
+    quantidade_media = (quantidade_maxima + quantidade_minima) / 2.0;
+
+    if (quantidade_atual >= quantidade_media) {
+        printf("Nao efetuar compra\n");
+    } else {
+        printf("Efetuar compra\n");
+    }
+
+    return 0;
+}
+
