@@ -1,0 +1,132 @@
+RESOLUÇÃO LISTA 6 - ALGORITMOS E PROGRAMAÇÃO
+
+1)
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char senha[101];
+    int i, hasUpper = 0, hasLower = 0, hasDigit = 0;
+
+    while (1) {
+        printf("Digite a senha: ");
+        fgets(senha, sizeof(senha), stdin);
+        senha[strcspn(senha, "\n")] = 0;
+
+        if (strlen(senha) >= 8 && strlen(senha) <= 100) {
+            for (i = 0; senha[i] != '\0'; i++) {
+                if (isupper(senha[i])) hasUpper = 1;
+                if (islower(senha[i])) hasLower = 1;
+                if (isdigit(senha[i])) hasDigit = 1;
+            }
+            if (hasUpper && hasLower && hasDigit) {
+                printf("Senha válida!\n");
+                break;
+            }
+        }
+        printf("Senha inválida. Tente novamente.\n");
+        hasUpper = hasLower = hasDigit = 0;
+    }
+
+    return 0;
+}
+
+2)
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int lengthUsingStrlen, lengthWithoutStrlen = 0;
+
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = 0;
+
+    lengthUsingStrlen = strlen(str);
+
+    while (str[lengthWithoutStrlen] != '\0') {
+        lengthWithoutStrlen++;
+    }
+
+    printf("Tamanho usando strlen: %d\n", lengthUsingStrlen);
+    printf("Tamanho sem usar strlen: %d\n", lengthWithoutStrlen);
+
+    if (lengthUsingStrlen == lengthWithoutStrlen) {
+        printf("Os resultados são iguais.\n");
+    } else {
+        printf("Os resultados são diferentes.\n");
+    }
+
+    return 0;
+}
+
+3)
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, length;
+
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = 0;
+
+    length = strlen(str);
+
+    printf("String de trás para frente: ");
+    for (i = length - 1; i >= 0; i--) {
+        putchar(str[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
+
+4)
+
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void limpar_string(char* str, char* limpa) {
+    int j = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (isalpha(str[i])) {
+            limpa[j++] = tolower(str[i]);
+        }
+    }
+    limpa[j] = '\0';
+}
+
+int main() {
+    char str[200], limpa[200];
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = 0;
+
+    limpar_string(str, limpa);
+
+    int length = strlen(limpa);
+    int isPalindrome = 1;
+
+    for (int i = 0; i < length / 2; i++) {
+        if (limpa[i] != limpa[length - i - 1]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+
+    if (isPalindrome) {
+        printf("A string é um palíndromo.\n");
+    } else {
+        printf("A string não é um palíndromo.\n");
+    }
+
+    return 0;
+}
