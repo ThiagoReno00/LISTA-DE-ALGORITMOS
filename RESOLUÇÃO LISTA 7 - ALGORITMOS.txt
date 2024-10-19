@@ -1,0 +1,128 @@
+RESOLUÇÃO LISTA 7 - ALGORITMOS E PROGRAMAÇÃO
+
+1)
+
+#include <stdio.h>
+
+int main() {
+    int inteiro = 10;
+    float real = 3.14;
+    char caractere = 'A';
+
+    int *ptr_inteiro = &inteiro;
+    float *ptr_real = &real;
+    char *ptr_char = &caractere;
+
+    printf("Valores antes da modificação:\n");
+    printf("Inteiro: %d\n", inteiro);
+    printf("Real: %.2f\n", real);
+    printf("Caractere: %c\n", caractere);
+
+    *ptr_inteiro = 20;
+    *ptr_real = 6.28;
+    *ptr_char = 'B';
+
+    printf("\nValores após a modificação:\n");
+    printf("Inteiro: %d\n", inteiro);
+    printf("Real: %.2f\n", real);
+    printf("Caractere: %c\n", caractere);
+
+    return 0;
+}
+
+2)
+
+#include <stdio.h>
+
+int main() {
+    int var1, var2;
+
+    if (&var1 > &var2) {
+        printf("O maior endereço é: %p\n", (void*)&var1);
+    } else {
+        printf("O maior endereço é: %p\n", (void*)&var2);
+    }
+
+    return 0;
+}
+
+3)
+
+#include <stdio.h>
+
+void trocar(int *a, int *b) {
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int main() {
+    int A, B;
+
+    printf("Digite o valor de A: ");
+    scanf("%d", &A);
+    printf("Digite o valor de B: ");
+    scanf("%d", &B);
+
+    printf("Antes da troca: A = %d, B = %d\n", A, B);
+
+    trocar(&A, &B);
+
+    printf("Depois da troca: A = %d, B = %d\n", A, B);
+
+    return 0;
+}
+
+4)
+
+#include <stdio.h>
+
+int main() {
+    float array[10];
+    
+    for (int i = 0; i < 10; i++) {
+        printf("Endereço do elemento %d: %p\n", i, (void*)&array[i]);
+    }
+
+    return 0;
+}
+
+5)
+
+#include <stdio.h>
+
+int main() {
+    float matriz[3][3];
+
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("Endereço do elemento [%d][%d]: %p\n", i, j, (void*)&matriz[i][j]);
+        }
+    }
+
+    return 0;
+}
+
+6)
+
+#include <stdio.h>
+
+void frac(float num, int* inteiro, float* frac) {
+    *inteiro = (int)num;
+    *frac = num - *inteiro;
+}
+
+int main() {
+    float num, parte_fracionaria;
+    int parte_inteira;
+
+    printf("Digite um número real: ");
+    scanf("%f", &num);
+
+    frac(num, &parte_inteira, &parte_fracionaria);
+
+    printf("Parte inteira: %d\n", parte_inteira);
+    printf("Parte fracionária: %.3f\n", parte_fracionaria);
+
+    return 0;
+}
